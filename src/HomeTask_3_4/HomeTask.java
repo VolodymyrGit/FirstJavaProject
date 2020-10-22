@@ -1,5 +1,4 @@
 package HomeTask_3_4;
 
-public class Main {
-
+public class HomeTask {
 }
