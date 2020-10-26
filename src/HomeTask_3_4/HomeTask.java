@@ -13,6 +13,7 @@ public class HomeTask {
         double b = scan.nextDouble();
         System.out.print("Введіь будь яке ціле число: c " );
         double c = scan.nextDouble();
+        System.out.println(a + " * x^2 + " + b + " * x + " + c + " = 0");
         if (a == 0 && b == 0)
             System.out.println("Змінні a=0, b=0, тому рівняння розв'язків не має");
         else if (a == 0 && b != 0) {
@@ -25,12 +26,28 @@ public class HomeTask {
             System.out.println("c = 0 ; Не повне квадратне рівняння ax^2+bx=0");
             System.out.println("x1 = 0");
             System.out.println("x2 = " + (-b / a));
-        } else if (a != 0 && b == 0 && c != 0) {
+        } if (a != 0 && b == 0 && c != 0) {
             System.out.println("b = 0 ; Не повне квадратне рівняння ax^2+c=0");
-        } else if ((-c / a) > 0) {
-            System.out.println("x1 = " + (sqrt(-c / a)));
-            System.out.println("x2 = " + (-(sqrt(-c / a))));
-        } else ((-c / a) < 0)
-
+            if ((-c / a) > 0) {
+                System.out.println("x1 = " + (Math.sqrt(-c / a)));
+                System.out.println("x2 = " + (-(Math.sqrt(-c / a))));
+            } else {
+                System.out.println("(-c / a) < 0 тому рівняння розв'язків не має");
+            }
+        }if (a != 0 && b != 0 && c != 0) {
+            System.out.println("Використовуємо дискримінант D ; D");
+            byte exponent = 2;
+            double D = ((Math.pow(b, exponent)) - 4 * a * c);
+            if (D == 0) {
+                System.out.println("Дискримінант D = 0 , тому x = -b/2a = " + (-b / 2 * a));
+                if (D > 0) {
+                    System.out.println("x1 = " + ((-b + (Math.sqrt(D))) / 2 * a));
+                    System.out.println("x2 = " + (-b - (Math.sqrt(D)) / 2 * a));
+                } else {
+                    System.out.println("Дискримінант D < 0 , тому рівняння розв'язків не має");
+                }
+            }
+        }
     }
 }
+
