@@ -27,7 +27,10 @@ public class HomeTask {
             System.out.println("x2 = " + (-b / a));
         } else if (a != 0 && b == 0 && c != 0) {
             System.out.println("b = 0 ; Не повне квадратне рівняння ax^2+c=0");
-            System.out.println();
-        }
+        } else if ((-c / a) > 0) {
+            System.out.println("x1 = " + (sqrt(-c / a)));
+            System.out.println("x2 = " + (-(sqrt(-c / a))));
+        } else ((-c / a) < 0)
+
     }
 }
