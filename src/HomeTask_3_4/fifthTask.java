@@ -11,10 +11,10 @@ public class fifthTask {
         double m = scan.nextDouble();
         System.out.print("Введіь будь яке число:  ");
         double n = scan.nextDouble();
-        if ((Math.abs(m - 10)) < (Math.abs(n - 10)))
-            System.out.println(n + " - ближче до 10");
-        else if ((Math.abs(n - 10)) < (Math.abs(m - 10)))
+        if (Math.abs(m - 10) < Math.abs(n - 10))
             System.out.println(m + " - ближче до 10");
+        else if ((Math.abs(n - 10)) < (Math.abs(m - 10)))
+            System.out.println(n + " - ближче до 10");
     }
 }
 
