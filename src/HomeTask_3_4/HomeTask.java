@@ -6,12 +6,12 @@ public class HomeTask {
 
     public static void main(String[] args) {
         System.out.println("Розв'язання квадратного рівняння: ax^2+bx+c=0");
-        System.out.print("Введіь будь яке ціле число: a = " );
+        System.out.print("Введіь будь яке число: a = " );
         Scanner scan = new Scanner(System.in);
         double a = scan.nextDouble();
-        System.out.print("Введіь будь яке ціле число: b = " );
+        System.out.print("Введіь будь яке число: b = " );
         double b = scan.nextDouble();
-        System.out.print("Введіь будь яке ціле число: c = " );
+        System.out.print("Введіь будь яке число: c = " );
         double c = scan.nextDouble();
         System.out.println(a + " * x^2 + " + b + " * x + " + c + " = 0");
         if (a == 0 && b == 0)
