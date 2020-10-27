@@ -9,7 +9,7 @@ public class Sequence {
         while (i <= 55) {
             i ++;
             a += 2;
-            System.out.println(a);
+            System.out.println("55 елементів послідовності що починається від одного і збільшується на 2 : " + a);
         }
     }
 }
