@@ -37,7 +37,6 @@ public class HomeTask {
             System.out.println("x2 = " + (-b / a));
 
         } if (a != 0 && b == 0 && c != 0) {
-
             System.out.println("b = 0 ; Не повне квадратне рівняння ax^2+c=0");
 
             if ((-c / a) > 0) {
@@ -49,7 +48,6 @@ public class HomeTask {
             }
 
         } if (a != 0 && b != 0 && c != 0) {
-
             byte exponent = 2;
             double D = ((Math.pow(b, exponent)) - 4 * a * c);
             System.out.println("Використовуємо дискримінант D");
@@ -57,9 +55,11 @@ public class HomeTask {
 
             if (D == 0) {
                 System.out.println("Дискримінант D = 0 , тому x = -b/2a = " + (-b / 2 * a));
+
             } else if (D > 0) {
                 System.out.println("x1 = (-b + sqrt(D))/(2a) = " + ((-b + (Math.sqrt(D))) / 2 * a));
                 System.out.println("x2 = (-b - sqrt(D))/(2a) = " + (-b - (Math.sqrt(D)) / 2 * a));
+
             } else {
                 System.out.println("Дискримінант D < 0 , тому рівняння розв'язків не має");
             }
