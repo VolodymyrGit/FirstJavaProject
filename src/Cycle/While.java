@@ -1,0 +1,18 @@
+package Cycle;
+
+import java.util.Scanner;
+
+public class While {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введіть: (1 / 0)");
+        String str = scan.nextLine();
+
+        while (str.equalsIgnoreCase("Так")) {
+            System.out.println("Так");
+            str = scan.nextLine();
+        }
+    }
+}
