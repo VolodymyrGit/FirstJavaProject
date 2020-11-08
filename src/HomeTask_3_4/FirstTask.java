@@ -2,7 +2,7 @@ package HomeTask_3_4;
 
 import java.util.Scanner;
 
-public class HomeTask {
+public class FirstTask {
 
     public static void main(String[] args) {
 
