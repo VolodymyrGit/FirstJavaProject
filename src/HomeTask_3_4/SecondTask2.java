@@ -18,24 +18,24 @@ public class SecondTask2 {
                 System.out.print("Введіть день тижня : ");
                 String weekday = scan.nextLine();
 
-                switch (weekday) {
-                    case "Понеділок":
+                switch (weekday.toLowerCase()) {
+                    case "понеділок":
                         System.out.println("Їхати на роботу");
                         break;
-                    case "Вівторок":
-                    case "Четвер":
+                    case "вівторок":
+                    case "четвер":
                         System.out.println("Навчання Java core");
                         break;
-                    case "Середа":
+                    case "середа":
                         System.out.println("Робити домашку");
                         break;
-                    case "П'ятниця":
+                    case "п'ятниця":
                         System.out.println("Доробити протези");
                         break;
-                    case "Субота":
+                    case "субота":
                         System.out.println("Попрацювати біля дому");
                         break;
-                    case "Неділя":
+                    case "неділя":
                         System.out.println("Купити продукти");
                         break;
                     default:

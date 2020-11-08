@@ -4,24 +4,35 @@ public class sixthTask {
 
     public static void main(String[] args) {
 
-        int a = (int) (Math.random() * 100);
-        int b = (int) (Math.random() * 100);
-        int c = (int) (Math.random() * 100);
-        int d = (int) (Math.random() * 100);
-        int e = (int) (Math.random() * 100);
-        int f = (int) (Math.random() * 100);
-        int g = (int) (Math.random() * 100);
-        int h = (int) (Math.random() * 100);
-        int i = (int) (Math.random() * 100);
-        int j = (int) (Math.random() * 100);
+        int[] array = new int[10];
 
-        int [] arr = new int [] {a, b, c, d, e, f, g, h, i, j};
-
-        for (int k = 0; k < 10; k ++) {
-            System.out.println(arr[k]);
-
-
+        for ( int i = 0; i < array.length; i++ ) {
+            array[i] = ( (int)(Math.random() * 101) - 50 );
+            System.out.print ( array[i] + " | " );
         }
+        System.out.println();
+        System.out.println("Найбільше число " + getMax(array));
+        System.out.println("Найменше число " + getMin(array));
+    }
+
+    public static int getMax (int[] inputArray) {
+        int maxValue = inputArray[0];
+        for (int i = 1; i < inputArray.length; i++) {
+            if (inputArray[i] > maxValue) {
+                maxValue = inputArray[i];
+            }
+        }
+        return maxValue;
+    }
+
+    public static int getMin (int[] inputArray) {
+        int minValue = inputArray[0];
+        for (int i = 1; i < inputArray.length; i++) {
+            if (inputArray[i] < minValue) {
+                minValue = inputArray[i];
+            }
+        }
+        return minValue;
     }
 }
 
