@@ -1,6 +1,6 @@
 package HomeTask_3_4;
 
-public class Sequence {
+public class ThirdTask {
 
     public static void main(String[] args) {
 
@@ -10,7 +10,7 @@ public class Sequence {
         while (i <= 55) {
             i ++;
             a += 2;
-            System.out.println("55 елементів послідовності що починається від одного і збільшується на 2 : " + a);
+            System.out.println((i - 1) + "-й елемент послідовності що починається від одного і збільшується на 2 : " + a);
         }
     }
 }
