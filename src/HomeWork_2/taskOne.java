@@ -18,8 +18,10 @@ public class taskOne {
 
         Double result = m + (m * n / 100 * k);
         System.out.println("\nЯкщо покласти суму " + m + "грн, під " +
-                n + " % на " + k + " років \n" +
-                "Можна отримати : " + result + " грн");
+                n + " % на " + k + " років \n");
+        System.out.print("Можна отримати : ");
+        System.out.printf("%.2f", result);
+        System.out.println(" грн");
     }
 }
 
