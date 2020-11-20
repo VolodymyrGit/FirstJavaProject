@@ -1,6 +1,6 @@
 package HomeWork_2;
 
-public class taskThree {
+public class TaskThree {
 
     public static void main(String[] args) {
         int[][] arr = new int[5][7];
