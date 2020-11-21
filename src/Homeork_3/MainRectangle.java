@@ -1,6 +1,13 @@
 package Homeork_3;
 
-public class Main {
+public class MainRectangle {
+
+    public static void main(String[] args) {
+
+        Rectangle rectangleWithSpecifiedParameters = new Rectangle();
+
+        Rectangle customRectangle = new Rectangle(20, 50);
+    }
 }
 //  Описати клас Rectangle , в якому буде описано поля : довжина, ширина.
 //  Описати дані поля в конструкторі. Створити конструктор з параметрами і без параметрів.
