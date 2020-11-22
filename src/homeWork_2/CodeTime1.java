@@ -1,8 +1,8 @@
-package HomeWork_2;
+package homeWork_2;
 
 import java.util.Scanner;
 
-public class codeTime1 {
+public class CodeTime1 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

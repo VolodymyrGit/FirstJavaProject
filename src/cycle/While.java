@@ -1,4 +1,4 @@
-package Cycle;
+package cycle;
 
 import java.util.Scanner;
 
