@@ -1,4 +1,4 @@
-package HomeTask_3_4;
+package homeTask_3_4;
 
 import java.util.Scanner;
 

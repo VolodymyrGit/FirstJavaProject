@@ -1,12 +1,16 @@
-package Homeork_3;
+package homework_3;
 
 public class MainRectangle {
 
     public static void main(String[] args) {
 
-        Rectangle rectangleWithSpecifiedParameters = new Rectangle();
+        Rectangle constructorWithSpecifiedParameters = new Rectangle();
+        constructorWithSpecifiedParameters.area();
+        constructorWithSpecifiedParameters.perimeter();
 
-        Rectangle customRectangle = new Rectangle(20, 50);
+        Rectangle customConstructor = new Rectangle(20, 50);
+        customConstructor.area();
+        customConstructor.perimeter();
     }
 }
 //  Описати клас Rectangle , в якому буде описано поля : довжина, ширина.
