@@ -17,12 +17,12 @@ public class Rectangle {
         System.out.println("Rectangle Methods With Custom Constructor");
     }
 
-    public void area() {
+    public void rectangleArea() {
         int square = this.length * this.width;
         System.out.println("Площа прямокутника = " + square);
     }
 
-    public void perimeter () {
+    public void rectanglePerimeter() {
         int perimeter = (this.length + this.width) * 2;
         System.out.println("Периметр прямокутника = " + perimeter + "\n");
     }

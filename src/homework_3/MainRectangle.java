@@ -5,12 +5,12 @@ public class MainRectangle {
     public static void main(String[] args) {
 
         Rectangle constructorWithSpecifiedParameters = new Rectangle();
-        constructorWithSpecifiedParameters.area();
-        constructorWithSpecifiedParameters.perimeter();
+        constructorWithSpecifiedParameters.rectangleArea();
+        constructorWithSpecifiedParameters.rectanglePerimeter();
 
         Rectangle customConstructor = new Rectangle(20, 50);
-        customConstructor.area();
-        customConstructor.perimeter();
+        customConstructor.rectangleArea();
+        customConstructor.rectanglePerimeter();
     }
 }
 //  Описати клас Rectangle , в якому буде описано поля : довжина, ширина.
