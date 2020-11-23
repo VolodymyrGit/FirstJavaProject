@@ -1,8 +1,8 @@
-package HomeTask_3_4;
+package homeTask_3_4;
 
 import java.util.Scanner;
 
-public class SecondTask2 {
+public class secondTask2 {
 
     public static void main(String[] args) {
 

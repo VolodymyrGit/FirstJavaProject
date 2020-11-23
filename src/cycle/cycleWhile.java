@@ -1,8 +1,8 @@
-package Cycle;
+package cycle;
 
 import java.util.Scanner;
 
-public class While {
+public class cycleWhile {
 
     public static void main(String[] args) {
 
