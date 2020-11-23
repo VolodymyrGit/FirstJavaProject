@@ -23,7 +23,6 @@ public class CodeTime1 {
     }
 
     public static  int sumArray (int[] array, int size) {
-// Для чого тут цей if ?
         if (array.length < size) {
             System.out.println("Неправильні значення розміру");
             return 0;

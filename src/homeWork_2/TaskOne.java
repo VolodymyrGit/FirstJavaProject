@@ -1,5 +1,6 @@
 package homeWork_2;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class TaskOne {
@@ -14,9 +15,9 @@ public class TaskOne {
         System.out.print("Введіть процентну ставку (% річних (лише цифри)) : ");
         float n = scan.nextFloat();
         System.out.print("Термін - введіть кількість років (лише ифри) : ");
-        float k = scan.nextFloat();
+        int k = scan.nextInt();
 
-        Double result = m + (m * n / 100 * k);
+        double result = m + (m * n / 100 * k);
         System.out.println("\nЯкщо покласти суму " + m + "грн, під " +
                 n + " % на " + k + " років \n");
         System.out.print("Можна отримати : ");
@@ -24,9 +25,7 @@ public class TaskOne {
         System.out.println(" грн");
     }
 }
-
-/*
-    В банк поклали m - гривень під n-% відсотків річних.
+/*    В банк поклали m - гривень під n-% відсотків річних.
     Яким буде вклад за K-років.
     Користувач вводить : m -суму грошей , n - процентна ставка та  k-кількість років.
 */
