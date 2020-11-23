@@ -12,12 +12,16 @@ public class Circle {
 
     public void circleArea() {
         double area = Math.PI * Math.pow(this.diameter, 2) / 4;
-        System.out.println("Площа кола = " + area);
+        System.out.print("Площа кола = ");
+        System.out.printf("%.2f", area);
+        System.out.println();
     }
 
     public void circleLength() {
         double length = 2 * Math.PI * this.radius;
-        System.out.println("Довжина кола = " + length);
+        System.out.print("Довжина кола = ");
+        System.out.printf("%.2f", length);
+        System.out.println();
     }
 }
 //  Створити клас Коло. Описати його двома полями: радіус , діаметр.
