@@ -1,10 +1,10 @@
 package homeWork_4;
 
-public class Samurai extends Warrior {
-    private int nihontoKatana;
-    private int bow;
+public class UkrainianKozak extends Warrior{
+    private int pistol;
+    private int saber;
 
-    public Samurai(int health, int attackForce, int attackSpeed) {
+    public UkrainianKozak(int health, int attackForce, int attackSpeed) {
         super(health, attackForce, attackSpeed);
     }
 }

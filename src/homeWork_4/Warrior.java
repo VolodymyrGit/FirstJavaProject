@@ -1,24 +1,14 @@
 package homeWork_4;
 
 public class Warrior {
-    private String name;
     private int health;
     private int attackForce;
     private int attackSpeed;
 
-    public Warrior(String name, int health, int attackForce, int attackSpeed) {
-        this.name = name;
+    public Warrior(int health, int attackForce, int attackSpeed) {
         this.health = health;
         this.attackForce = attackForce;
         this.attackSpeed = attackSpeed;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getHealth() {
