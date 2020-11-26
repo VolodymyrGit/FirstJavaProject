@@ -1,8 +1,8 @@
-package homeWork_2;
+package HomeWork_2;
 
 import java.util.Scanner;
 
-public class TaskTwo {
+public class taskTwo {
 
     public static void main(String[] args) {
         System.out.println("Введіть 5 елементів масиву");

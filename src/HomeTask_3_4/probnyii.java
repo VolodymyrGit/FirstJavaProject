@@ -1,6 +1,6 @@
-package homeTask_3_4;
+package HomeTask_3_4;
 
-public class Probnyii {
+public class probnyii {
 
     public static void main(String[] args) {
 
