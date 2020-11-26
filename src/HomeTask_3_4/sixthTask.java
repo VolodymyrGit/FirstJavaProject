@@ -1,6 +1,6 @@
 package HomeTask_3_4;
 
-public class SixthTask {
+public class sixthTask {
 
     public static void main(String[] args) {
 
