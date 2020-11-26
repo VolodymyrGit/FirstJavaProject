@@ -17,6 +17,7 @@ public class Warrior {
         System.out.println("Warrior - " + name);
         System.out.println("Health - " + health + " hp");
         System.out.println("Attack force - " + attackForce);
+        System.out.println("Attack speed" + attackSpeed);
     }
 
     public void attack() {
