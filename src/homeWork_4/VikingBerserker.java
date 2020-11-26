@@ -4,8 +4,8 @@ public class VikingBerserker extends Warrior{
     private int scandinavianSword;
     private int shield;
 
-    public VikingBerserker(int health, int attackForce, int attackSpeed) {
-        super(health, attackForce, attackSpeed);
+    public VikingBerserker(String name, int health, int attackForce, int attackSpeed) {
+        super(name, health, attackForce, attackSpeed);
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.

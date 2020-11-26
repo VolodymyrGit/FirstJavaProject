@@ -4,8 +4,8 @@ public class RomanLegionary extends Warrior {
     private int swordGladius;
     private int shield;
 
-    public RomanLegionary(int health, int attackForce, int attackSpeed) {
-        super(health, attackForce, attackSpeed);
+    public RomanLegionary(String name, int health, int attackForce, int attackSpeed) {
+        super(name, health, attackForce, attackSpeed);
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.

@@ -4,8 +4,8 @@ public class UkrainianKozak extends Warrior{
     private int pistol;
     private int saber;
 
-    public UkrainianKozak(int health, int attackForce, int attackSpeed) {
-        super(health, attackForce, attackSpeed);
+    public UkrainianKozak(String name, int health, int attackForce, int attackSpeed) {
+        super(name, health, attackForce, attackSpeed);
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.

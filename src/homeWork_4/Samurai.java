@@ -4,8 +4,8 @@ public class Samurai extends Warrior {
     private int nihontoKatana;
     private int bow;
 
-    public Samurai(int health, int attackForce, int attackSpeed) {
-        super(health, attackForce, attackSpeed);
+    public Samurai(String name, int health, int attackForce, int attackSpeed) {
+        super(name, health, attackForce, attackSpeed);
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.
