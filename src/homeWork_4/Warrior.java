@@ -14,14 +14,24 @@ public class Warrior {
     }
 
     public void warriorAndParameters() {
-        System.out.println("Warrior - " + name);
-        System.out.println("Health - " + health + " hp");
-        System.out.println("Attack force - " + attackForce);
-        System.out.println("Attack speed" + attackSpeed);
+        System.out.println("Warrior - " + this.name);
+        System.out.println("Health - " + this.health + " hp");
+        System.out.println("Attack force - " + this.attackForce);
+        System.out.println("Attack speed" + this.attackSpeed);
     }
 
-    public void attack() {
+    public void whoShouldBeAttacked() {
+        while (health > 0) {
+            if (random() == 1) {
+                attack(this.health);
+            }
+        }
+    }
 
+    public void attack(int health) {
+        while (health > 0) {
+            health - int
+        }
     }
 
     public void defend() {
@@ -32,11 +42,10 @@ public class Warrior {
 
     }
 
-    public int random() {
-        return random();
+    public static int random() {
+        return ((int) (Math.random() * 4) + 1);
     }
 }
-
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.
 //  Зробити декілька типів воїнів-наслідників. Кожен з них має свої особливості , наприклад hp, зброя і т.д.
 //  Тут потрібно проявити свою фантазію і додавати класи, які хочеться. Потім має бути битва.
