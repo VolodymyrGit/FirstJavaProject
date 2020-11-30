@@ -1,6 +1,7 @@
 package homeWork_4;
 
 public class Warrior {
+    private static int countTheDead = 1;
     private static final int amountWarriors = 4;
     private String name;
     private int health;
@@ -29,6 +30,15 @@ public class Warrior {
 //        return number;
 //    }
 
+
+    public static int getCountTheDead() {
+        return countTheDead;
+    }
+
+    public static void setCountTheDead(int countTheDead) {
+        Warrior.countTheDead = countTheDead;
+    }
+
     public void warriorParameters() {
         System.out.println("Warrior - " + this.name);
         System.out.println("Health - " + this.health + " hp");
@@ -45,17 +55,16 @@ public class Warrior {
                                        Warrior warrior3, Warrior warrior4) {
         Warrior[] arrayWar = new Warrior[]{warrior1, warrior2, warrior3, warrior4};
         while (warrior1.health > 0 || warrior2.health > 0 || warrior3.health > 0 || warrior4.health > 0) {
-            int count = 1;
             if (arrayWar[random()].equals(arrayWar[0])) {
-                arrayWar[0].attack(arrayWar[randomExcept(0)], count);
+                arrayWar[0].attack(arrayWar[randomExcept(0)]);
             } else if (arrayWar[random()].equals(arrayWar[1])) {
-                arrayWar[1].attack(arrayWar[randomExcept(1)], count);
+                arrayWar[1].attack(arrayWar[randomExcept(1)]);
             } else if (arrayWar[random()].equals(arrayWar[2])) {
-                arrayWar[2].attack(arrayWar[randomExcept(2)], count);
+                arrayWar[2].attack(arrayWar[randomExcept(2)]);
             } else if (arrayWar[random()].equals(arrayWar[3])) {
-                arrayWar[3].attack(arrayWar[randomExcept(3)], count);
+                arrayWar[3].attack(arrayWar[randomExcept(3)]);
             }
-            if (count == Warrior.amountWarriors) {
+            if (Warrior.countTheDead == Warrior.amountWarriors) {
                 break;
             }
         }
@@ -82,7 +91,7 @@ public class Warrior {
 
     }
 
-    public void attack(Warrior warrior, int countTheDead) {
+    public void attack(Warrior warrior) {
 
         if (health > 0 && warrior.health > 0) {
             System.out.println("Воїн " + name + " " + health + " hp - атакує Воїна " +
@@ -94,9 +103,8 @@ public class Warrior {
             } else {
                 System.out.println("Воїн " + name + " вбив Воїна " + warrior.name + "\n");
                 countTheDead++;
-                System.out.println(countTheDead);
                 if (countTheDead == Warrior.amountWarriors) {
-                    System.out.println("\n Переміг Воїн " + name + " ! ! !");
+                    System.out.println("Переміг Воїн " + name + " ! ! !");
                 }
             }
 //        Чому так не канає ?
@@ -104,9 +112,8 @@ public class Warrior {
         }
     }
 
-    public static int count(int i) {
-        i = i + 1;
-        return i;
+    public static int countDead(int i) {
+        return i + 1;
     }
 
     public void defend() {
