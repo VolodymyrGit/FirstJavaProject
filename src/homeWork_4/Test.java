@@ -3,6 +3,32 @@ package homeWork_4;
 public class Test {
 
     public static void main(String[] args) {
+
+
+
+//        int[][] arr = new int[5][7];
+//        for (int i = 0; i < 5; i ++) {
+//            for (int j = 0; j < 7; j ++) {
+//                arr[i][j] = random();
+//                System.out.print(" | " + arr[i][j]);
+//            }
+//            System.out.print(" |");
+//            System.out.println();
+//        }
+//    }
+//
+//    public static int random () {
+//        return (int) (Math.random() * 4);
+//
+//    }
+//}
+
+
+        int q = 1;
+        int w = 2;
+        int e = 3;
+        int[] ar = new int[] {q, w, e};
+        System.out.println(ar[0]);
     }
 }
 

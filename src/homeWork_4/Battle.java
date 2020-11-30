@@ -18,12 +18,15 @@ public class Battle {
         ukrainianKozak.warriorParameters();
         vikingBerserker.warriorParameters();
 
-        System.out.println("    Битва !!!");
+        System.out.println("    Битва !!!\n");
 
-        while(romanLegionary.getHealth() > 0 && samurai.getHealth() > 0 &&
-        ukrainianKozak.getHealth() > 0 && vikingBerserker.getHealth() > 0) {
+//        while(romanLegionary.getHealth() > 0 && samurai.getHealth() > 0 &&
+//        ukrainianKozak.getHealth() > 0 && vikingBerserker.getHealth() > 0) {
             Warrior.whoShouldAttack(romanLegionary, samurai, ukrainianKozak, vikingBerserker);
-        }
+
+//        }
+
+//        romanLegionary.attack(samurai);
 
 //        int[] warriorsArray = new int[]{romanLegionary.getHealth(), samurai.getHealth(),
 //        ukrainianKozak.getHealth(), vikingBerserker.getHealth()};
