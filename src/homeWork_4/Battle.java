@@ -3,15 +3,15 @@ package homeWork_4;
 public class Battle {
 
     public static void main(String[] args) {
-//        Warrior warrior = new Warrior();
+
         RomanLegionary romanLegionary = new RomanLegionary("RomanLegionary",1000,
                 "Sword Gladius", 200);
         Samurai samurai = new Samurai("Samurai", 900,
-                "Nihonto Katana", 160);
+                "Nihonto Katana", 250);
         UkrainianKozak ukrainianKozak = new UkrainianKozak("Ukrainian Kozak", 1100,
-                "Saber", 170);
+                "Saber", 200);
         VikingBerserker vikingBerserker = new VikingBerserker("VikingBerserker", 800,
-                "Scandinavian Sword", 150);
+                "Scandinavian Sword", 300);
 
         romanLegionary.warriorParameters();
         samurai.warriorParameters();
@@ -20,19 +20,7 @@ public class Battle {
 
         System.out.println("    Битва !!!\n");
 
-//        while(romanLegionary.getHealth() > 0 && samurai.getHealth() > 0 &&
-//        ukrainianKozak.getHealth() > 0 && vikingBerserker.getHealth() > 0) {
             Warrior.whoShouldAttack(romanLegionary, samurai, ukrainianKozak, vikingBerserker);
-
-//        }
-
-//        romanLegionary.attack(samurai);
-
-//        int[] warriorsArray = new int[]{romanLegionary.getHealth(), samurai.getHealth(),
-//        ukrainianKozak.getHealth(), vikingBerserker.getHealth()};
-//        int index = 0;
-//        while (warriorsArray[index] > 0){
-//        }
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.

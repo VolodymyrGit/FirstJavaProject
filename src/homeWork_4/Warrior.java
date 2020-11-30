@@ -8,8 +8,6 @@ public class Warrior {
     private String weaponsName;
     private int weapon;
 
-    public Warrior() {
-    }
 
     public Warrior(String name, int health, String weaponsName, int weapon) {
         this.name = name;
@@ -18,25 +16,8 @@ public class Warrior {
         this.weapon = weapon;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
     public void setHealth(int health) {
         this.health = health;
-    }
-
-//    public int getNumber() {
-//        return number;
-//    }
-
-
-    public static int getCountTheDead() {
-        return countTheDead;
-    }
-
-    public static void setCountTheDead(int countTheDead) {
-        Warrior.countTheDead = countTheDead;
     }
 
     public void warriorParameters() {
@@ -47,14 +28,11 @@ public class Warrior {
         System.out.println();
     }
 
-    public static void print(Warrior warrior) {
-        System.out.println(warrior.name);
-    }
-
     public static void whoShouldAttack(Warrior warrior1, Warrior warrior2,
                                        Warrior warrior3, Warrior warrior4) {
         Warrior[] arrayWar = new Warrior[]{warrior1, warrior2, warrior3, warrior4};
-        while (warrior1.health > 0 || warrior2.health > 0 || warrior3.health > 0 || warrior4.health > 0) {
+        while (warrior1.health > 0 || warrior2.health > 0 ||
+                warrior3.health > 0 || warrior4.health > 0) {
             if (arrayWar[random()].equals(arrayWar[0])) {
                 arrayWar[0].attack(arrayWar[randomExcept(0)]);
             } else if (arrayWar[random()].equals(arrayWar[1])) {
@@ -69,8 +47,6 @@ public class Warrior {
             }
         }
     }
-
-
 //  Так не виходить?
 //        switch (arrayWar[random()]) {
 //            case arrayWar[1]:
@@ -84,21 +60,13 @@ public class Warrior {
 //                break;
 //      }
 
-
-    public void whoWillBeAttacked(Warrior warrior1, Warrior warrior2,
-                                  Warrior warrior3, Warrior warrior4) {
-        Warrior[] arr = new Warrior[]{warrior1, warrior2, warrior3, warrior4};
-
-    }
-
     public void attack(Warrior warrior) {
-
         if (health > 0 && warrior.health > 0) {
             System.out.println("Воїн " + name + " " + health + " hp - атакує Воїна " +
                     warrior.name + " " + warrior.health + " hp");
             warrior.setHealth(warrior.health - weapon);
             if (warrior.health > 0) {
-                System.out.println("Воїн " + name + " " + health + " hp   Воїн " +
+                System.out.println("Воїн " +
                         warrior.name + " " + warrior.health + " hp" + "\n");
             } else {
                 System.out.println("Воїн " + name + " вбив Воїна " + warrior.name + "\n");
@@ -110,34 +78,6 @@ public class Warrior {
 //        Чому так не канає ?
 //        this.health = this.health - weapon;
         }
-    }
-
-    public static int countDead(int i) {
-        return i + 1;
-    }
-
-    public void defend() {
-
-    }
-
-    public void slipping() {
-
-    }
-
-//    public static String[] surviced () {
-//
-//    }
-
-    public static void whoSurvived(Warrior[] warrior) {
-        String s = "Бій закінчився\n\nПереміг Воїн ";
-        for (int i = 0; i < Warrior.amountWarriors - 1; i++) {
-//            if (warrior[i].health > 0 && ) {
-//
-//            }
-        }
-//        for (Warrior warrior : warrior) {
-//
-//        }
     }
 
     public static int random() {

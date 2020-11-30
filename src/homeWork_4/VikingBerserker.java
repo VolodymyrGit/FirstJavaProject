@@ -1,20 +1,11 @@
 package homeWork_4;
 
 public class VikingBerserker extends Warrior {
-    private int number = 4;
-    private String name = "VikingBerserker";
-    private int health = 800;
-    private String weaponsName = "Scandinavian Sword";
-    private int weapon = 150;
     private int scandinavianSword;
     private int axe;
 
     public VikingBerserker(String name, int health, String weaponsName, int weapon) {
         super(name, health, weaponsName, weapon);
-    }
-
-    public int getNumber() {
-        return number;
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.
