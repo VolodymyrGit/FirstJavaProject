@@ -3,34 +3,40 @@ package homeWork_4;
 public class Test {
 
     public static void main(String[] args) {
-
-
+        int a,b;
+        a = 2;
+        b=3;
+        System.out.println(a + " " + b);
+    }
+}
 
 //        int[][] arr = new int[5][7];
-//        for (int i = 0; i < 5; i ++) {
-//            for (int j = 0; j < 7; j ++) {
-//                arr[i][j] = random();
+//        for (int i = 0; i < 5; i++) {
+//            for (int j = 0; j < 7; j++) {
+//                arr[i][j] = Warrior.random();
 //                System.out.print(" | " + arr[i][j]);
 //            }
 //            System.out.print(" |");
 //            System.out.println();
 //        }
 //    }
+//}
 //
-//    public static int random () {
-//        return (int) (Math.random() * 4);
+//        public static int random () {
+//            return (int) (Math.random() * 4);
 //
+//        }
 //    }
 //}
 
 
-        int q = 1;
-        int w = 2;
-        int e = 3;
-        int[] ar = new int[] {q, w, e};
-        System.out.println(ar[0]);
-    }
-}
+//        int q = 1;
+//        int w = 2;
+//        int e = 3;
+//        int[] ar = new int[] {q, w, e};
+//        System.out.println(ar[0]);
+//    }
+//}
 
 //    public static int[] array(int a, int b) {
 //        return new array[a,b];
