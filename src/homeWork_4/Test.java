@@ -1,14 +1,60 @@
 package homeWork_4;
 
+import java.util.Random;
+
 public class Test {
 
     public static void main(String[] args) {
-        int a,b;
-        a = 2;
-        b=3;
-        System.out.println(a + " " + b);
+        int[] arrayNumbers = new int[40];
+        anotherRandomNumber(arrayNumbers);
+
+        int[] n = new int[] {1, 2, 3, 4};
     }
+
+
+    public static void anotherRandomNumber(int[] arrayNumbers) {
+        Random random = new Random();
+        for (int number : arrayNumbers) {
+            number = random.nextInt(arrayNumbers.length);
+            System.out.println(number);
+        }
+    }
+
+
+//    public static int randomWarrior1 (int[] arrayWar, int j) {
+//        Random random = new Random();
+//        int number = 0;
+//        int[] arrayNumbers = new int[arrayWar.length];
+//        for (int i : arrayNumbers) {
+//            i = random.nextInt(arrayNumbers.length);
+//            if (arrayWar[i] > 0 && !arrayWar[i].equals(j)) {
+//                number = i;
+//            }
+//        }
+//        return arrayWar[number];
+//    }
+
+//    public static void randomWarrior1 (int[] arrayWar, Warrior warrior) {
+//        Random random = new Random();
+//        int[] arrayNumbers = new int[arrayWar.length];
+//        for (int number : arrayNumbers) {
+//            number = random.nextInt(arrayNumbers.length);
+//        }
+//
+//        while (arrayWar[i].health <= 0 && arrayWar[i].equals(arrayWar[warIndex])) {
+//            random.nextInt(arrayWar.length);
+//        }
+//    }
 }
+
+
+
+//        int a,b;
+//        a = 2;
+//        b=3;
+//        System.out.println(a + " " + b);
+//    }
+//}
 
 //        int[][] arr = new int[5][7];
 //        for (int i = 0; i < 5; i++) {

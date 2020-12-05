@@ -1,8 +1,8 @@
 package homeWork_4;
 
+import java.util.Random;
+
 public class Warrior {
-    private static int countTheDead = 1;
-    private static final int amountWarriors = 4;
     private String name;
     private int health;
     private String weaponsName;
@@ -29,34 +29,51 @@ public class Warrior {
     }
 
     public static void whoShouldAttack(Warrior[] arrayWar) {
-        int countTheDead = 0;
-        while (countTheDead < arrayWar.length) {
 
+        int countTheDead = 0;
+        while (countTheDead != arrayWar.length - 1) {
+            if (countTheDead < arrayWar.length - 1) {
+                countTheDead = 0;
+            }
             for (Warrior warrior : arrayWar) {
-                int random = (int) (Math.random() * arrayWar.length);
-                while (arrayWar[random].health <= 0 && arrayWar[random].equals(warrior)) {
-                    random = (int) (Math.random() * arrayWar.length);
-                }
+
                 if (warrior.health > 0) {
-                    arrayWar[random].attack(warrior);
+                    randomWarrior3(arrayWar).attack(warrior);
                 }
                 if (warrior.health <= 0) {
                     countTheDead++;
+                    System.out.println(countTheDead);
                 }
                 if (countTheDead == arrayWar.length - 1) {
-                    System.out.println("Переміг Воїн " + arrayWar[random].name + " ! ! !");
-                    break;
+                    System.out.println("Переміг Воїн " + whoWon(arrayWar).name + " ! ! !");
                 }
             }
-            if (countTheDead != arrayWar.length - 1) {
+        }
+    }
+
+
+    public static void whoAttack(Warrior[] arrayWar) {
+        int countTheDead = 0;
+        while (countTheDead != arrayWar.length - 1) {
+            randomWarrior3(arrayWar).attack(randomWarrior3(arrayWar));
+            for (Warrior warrior : arrayWar) {
+                if (warrior.health <= 0) {
+                    countTheDead++;
+//                    System.out.println(countTheDead);
+                }
+            }
+            if (countTheDead < arrayWar.length - 1) {
                 countTheDead = 0;
+            }
+            if (countTheDead == arrayWar.length - 1) {
+                System.out.println("Переміг Воїн " + whoWon(arrayWar).name + " ! ! !");
             }
         }
     }
 
 
     public void attack(Warrior warrior) {
-        if (health > 0 && warrior.health > 0) {
+        if (health > 0 && warrior.health > 0 && !name.equals(warrior.name)) {
             System.out.println("Воїн " + name + " " + health + " hp - атакує Воїна " +
                     warrior.name + " " + warrior.health + " hp");
             warrior.setHealth(warrior.health - weapon);
@@ -64,31 +81,59 @@ public class Warrior {
                 System.out.println("Воїн " +
                         warrior.name + " " + warrior.health + " hp" + "\n");
             } else {
-                System.out.println("Воїн " + name + " вбив Воїна " + warrior.name + "\n");
-//                if (countTheDead == Warrior.amountWarriors) {
-//                    System.out.println("Переміг Воїн " + name + " ! ! !");
-//                }
+                System.out.println("Воїн " + name + " вбив Воїна " + warrior.name);
+                System.out.println("+1" + "\n");
             }
-//        Чому так не канає ?
-//        this.health = this.health - weapon;
         }
     }
-}
 
-//    public static int random(int amount) {
-//        return (int) (Math.random() * amount);
-//    }
+
+//    public static Warrior randomWarrior(Warrior[] arrayWar, int warIndex) {
+//        int random = (int) (Math.random() * arrayWar.length);
 //
-//}
-
-//    public static int randomExcept(int exceptNumber) {
-//        int number = random();
-//        while (number == exceptNumber) {
-//            number = random();
+//        while (arrayWar[random].health <= 0 && arrayWar[random].equals(arrayWar[warIndex])) {
+//            random = (int) (Math.random() * arrayWar.length);
 //        }
-//        return number;
+//        return arrayWar[random];
 //    }
-//}
+
+    public static Warrior anotherRandomWarrior(Warrior[] arrayWar, Warrior warrior) {
+        Random random = new Random();
+        int number = random.nextInt(arrayWar.length);
+
+        int[] arrayNumbers = new int[arrayWar.length + 5];
+        for (int i : arrayNumbers) {
+            i = random.nextInt(arrayWar.length);
+            if (!arrayWar[i].equals(warrior)) {
+                number = i;
+                break;
+            }
+        }
+//        System.out.println(arrayWar[number].name);
+        return arrayWar[number];
+    }
+
+
+    public static Warrior randomWarrior3(Warrior[] arrayWar) {
+        Random random = new Random();
+        int i = random.nextInt(arrayWar.length);
+//        System.out.println("\n" + arrayWar[i].name + "\n");
+        return arrayWar[i];
+    }
+
+
+    public static Warrior whoWon(Warrior[] arrayWar) {
+        int winnersNumber = 0;
+        for (int i = 0; i < arrayWar.length; i++) {
+            if (arrayWar[i].health > 0) {
+                winnersNumber = i;
+            }
+        }
+        return arrayWar[winnersNumber];
+    }
+
+
+}
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.
 //  Зробити декілька типів воїнів-наслідників. Кожен з них має свої особливості , наприклад hp, зброя і т.д.
 //  Тут потрібно проявити свою фантазію і додавати класи, які хочеться. Потім має бути битва.

@@ -5,13 +5,13 @@ public class Battle {
     public static void main(String[] args) {
 
         RomanLegionary romanLegionary = new RomanLegionary("RomanLegionary", 1000,
-                "Sword Gladius", 200);
+                "Sword Gladius", 300);
         Samurai samurai = new Samurai("Samurai", 900,
-                "Nihonto Katana", 250);
+                "Nihonto Katana", 350);
         UkrainianKozak ukrainianKozak = new UkrainianKozak("Ukrainian Kozak", 1100,
-                "Saber", 200);
+                "Saber", 300);
         VikingBerserker vikingBerserker = new VikingBerserker("VikingBerserker", 800,
-                "Scandinavian Sword", 300);
+                "Scandinavian Sword", 400);
 
         Warrior[] arrayWar = new Warrior[]{romanLegionary, samurai, ukrainianKozak, vikingBerserker};
         for (Warrior warrior : arrayWar) {
@@ -20,7 +20,14 @@ public class Battle {
 
         System.out.println("    Битва !!!\n");
 
-        Warrior.whoShouldAttack(arrayWar);
+
+//        Warrior.randomWarrior3(arrayWar).attack(Warrior.randomWarrior3(arrayWar));
+//        Warrior.anotherRandomWarrior(arrayWar, Warrior.randomWarrior3(arrayWar));
+
+        Warrior.whoAttack(arrayWar);
+
+
+//        Warrior.whoShouldAttack(arrayWar);
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.
