@@ -20,14 +20,7 @@ public class Battle {
 
         System.out.println("    Битва !!!\n");
 
-
-//        Warrior.randomWarrior3(arrayWar).attack(Warrior.randomWarrior3(arrayWar));
-//        Warrior.anotherRandomWarrior(arrayWar, Warrior.randomWarrior3(arrayWar));
-
         Warrior.whoAttack(arrayWar);
-
-
-//        Warrior.whoShouldAttack(arrayWar);
     }
 }
 //  Зробити міні-гру - битва.  Створити одну сутність - шаблонний варіант воїна.
