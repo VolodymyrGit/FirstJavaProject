@@ -1,8 +1,6 @@
 package homeWork_4;
 
 public class UkrainianKozak extends Warrior{
-    private int saber;
-    private int pistol;
 
     public UkrainianKozak(String name, int health, String weaponsName, int weapon) {
         super(name, health,weaponsName, weapon);

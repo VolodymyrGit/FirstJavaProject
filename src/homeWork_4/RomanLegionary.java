@@ -1,8 +1,6 @@
 package homeWork_4;
 
 public class RomanLegionary extends Warrior {
-    private int swordGladius;
-    private int shield;
 
     public RomanLegionary(String name, int health, String weaponsName, int weapon) {
         super(name, health, weaponsName, weapon);

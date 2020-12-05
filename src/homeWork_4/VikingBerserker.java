@@ -1,8 +1,6 @@
 package homeWork_4;
 
 public class VikingBerserker extends Warrior {
-    private int scandinavianSword;
-    private int axe;
 
     public VikingBerserker(String name, int health, String weaponsName, int weapon) {
         super(name, health, weaponsName, weapon);
