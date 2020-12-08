@@ -1,7 +1,63 @@
 package home_Work_5;
 
+import java.security.PublicKey;
+import java.util.Scanner;
+
 public class Enums {
-    
+    Scanner scanner = new Scanner(System.in);
+
+    public String readFromScanner () {
+        System.out.println("Enter the name of the month on English ");
+        return scanner.nextLine();
+    }
+
+    public void toCompare (String str) {
+        Months[] arr = Months.values();
+        for(Months month : arr) {
+            if(str.equalsIgnoreCase(month.name()));
+            System.out.println();
+        }
+    }
+
+    public void checkIfThereIsSuchAMonth () {
+
+    }
+
+    public void displayAllMonthsWithTheSameSeason () {
+
+    }
+
+    public void displayAllMonthsWithTheSameNumberOfDays () {
+
+    }
+
+    public void displayAllMonthsThatHaveFewerDays () {
+
+    }
+
+    public void displayAllMonthsThatHaveMoreDays () {
+
+    }
+
+    public void displayTheNextSeason () {
+
+    }
+
+    public void displayThePreviousSeason () {
+
+    }
+
+    public void displayAllMonthsThatHaveAnEvenNumberOfDays () {
+
+    }
+
+    public void displayAllMonthsThatHaveAnOddNumberOfDays () {
+
+    }
+
+    public void DisplayWhetherTheMonthEnteredFromTheConsoleHasAnEvenNumberOfDays () {
+
+    }
 }
 //    Написати консольну програму для роботи з Enums.
 //    Створити енум Сезони, в якому оголосити такі константи : Зима , Весна, Літо, Осінь.
