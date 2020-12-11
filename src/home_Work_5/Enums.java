@@ -1,13 +1,22 @@
 package home_Work_5;
 
-import java.security.PublicKey;
 import java.util.Scanner;
 
 public class Enums {
     Scanner scanner = new Scanner(System.in);
 
-    public String readFromScanner () {
+    public String readFromScanner (String string) {
         System.out.println("Enter the name of the month on English ");
+        String s = "YES";
+        for (Months m : Months.values())
+        if (!string.equalsIgnoreCase(m.name())){
+            while (!s.equalsIgnoreCase("NO")) {
+                System.out.println("You entered an incorrect value.\n" +
+                        "Would you like to continue work with the months ( YES/NO )");
+                s = scanner.nextLine();
+                System.out.println("Enter the name of the month on English ");
+            }
+        }
         return scanner.nextLine();
     }
 
@@ -23,37 +32,15 @@ public class Enums {
 
     }
 
-    public void displayAllMonthsWithTheSameSeason () {
-
+    public static void displayAllMonthsWithTheSameSeason (Months month) {
+        for(Months m : Months.values()) {
+            if(month.getSeason() == m.getSeason()) {
+                System.out.println(m.name() + "- This month is from the same time of year - " + m.getSeason());
+            }
+        }
+        System.out.println();
     }
 
-    public void displayAllMonthsWithTheSameNumberOfDays () {
-
-    }
-
-    public void displayAllMonthsThatHaveFewerDays () {
-
-    }
-
-    public void displayAllMonthsThatHaveMoreDays () {
-
-    }
-
-    public void displayTheNextSeason () {
-
-    }
-
-    public void displayThePreviousSeason () {
-
-    }
-
-    public void displayAllMonthsThatHaveAnEvenNumberOfDays () {
-
-    }
-
-    public void displayAllMonthsThatHaveAnOddNumberOfDays () {
-
-    }
 
     public void DisplayWhetherTheMonthEnteredFromTheConsoleHasAnEvenNumberOfDays () {
 

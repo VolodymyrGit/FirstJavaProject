@@ -29,4 +29,112 @@ public enum Months {
     public Seasons getSeason() {
         return season;
     }
+
+    public static int checkIfThereIsSuchAMonth (String string) {
+        int i = 0;
+        for(Months m : Months.values()) {
+            if(string.toUpperCase().equals(m.name())) {
+                i = 1;
+                System.out.println("There is such a month of the year - " + m.name());
+            }
+        }
+        if (i == 0){
+            System.out.println("There is no such month in the year");
+        }
+        System.out.println();
+        return i;
+    }
+
+    public Months displayAllMonthsWithTheSameSeason () {
+        for(Months m : Months.values()) {
+            if(season == m.season && !name().equals(m.name())) {
+                System.out.println(m + "- This month is from the same season - " + m.season);
+            }
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+
+    public Months displayAllMonthsWithTheSameNumberOfDays () {
+        for(Months m : Months.values()) {
+            if(numberOfDays == m.numberOfDays && !name().equals(m.name())) {
+                System.out.println(m.name() + "- Month with the same number of days - " + m.numberOfDays);
+            }
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+    public Months displayAllMonthsThatHaveFewerDays () {
+        for(Months m : Months.values()) {
+            if(numberOfDays > m.numberOfDays && !name().equals(m.name())) {
+                System.out.println(m.name() + "- This month has fewer days - " + m.numberOfDays);
+            }
+        }
+        if (numberOfDays == 28) {
+            System.out.println("February alone can have 28 days");
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+    public Months displayAllMonthsThatHaveMoreDays () {
+        for(Months m : Months.values()) {
+            if(numberOfDays < m.numberOfDays && !name().equals(m.name())) {
+                System.out.println(m.name() + "- This month has more days - " + m.numberOfDays);
+            }
+        }
+        if (numberOfDays == 31) {
+            System.out.println("31 - This is the largest number of days");
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+    public Months displayTheNextSeason () {
+        Seasons[] seasons = Seasons.values();
+        for (int i = 0; i < seasons.length; i++) {
+            if (season.equals(seasons[i]) && i != 3) {
+                System.out.println("Next season is - " + seasons[i + 1]);
+            } else if (season.equals(seasons[i]) && i == 3) {
+                System.out.println("Next season is - " + seasons[0]);
+            }
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+    public Months displayThePreviousSeason () {
+        Seasons[] seasons = Seasons.values();
+        for (int i = 0; i < seasons.length; i++) {
+            if (season.equals(seasons[i]) && i != 0) {
+                System.out.println("Previous season is - " + seasons[i - 1]);
+            } else if (season.equals(seasons[i]) && i == 0) {
+                System.out.println("Previous season is - " + seasons[3]);
+            }
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+    public Months displayAllMonthsThatHaveAnEvenNumberOfDays () {
+        for(Months m : Months.values()) {
+            if(m.numberOfDays % 2 == 0) {
+                System.out.println(m.name() + " - This month has an even number of days - " + m.numberOfDays);
+            }
+        }
+        System.out.println();
+        return valueOf(name());
+    }
+
+    public Months displayAllMonthsThatHaveAnOddNumberOfDays () {
+        for(Months m : Months.values()) {
+            if(m.numberOfDays % 2 != 0) {
+                System.out.println(m.name() + " - This month has an odd number of days - " + m.numberOfDays);
+            }
+        }
+        System.out.println();
+        return valueOf(name());
+    }
 }
