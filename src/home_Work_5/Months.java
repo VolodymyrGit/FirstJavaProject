@@ -33,19 +33,19 @@ public enum Months {
     }
 
 
-    public static int checkIfThereIsSuchAMonth(String string) {
-        int i = 0;
+    public static boolean checkIfThereIsSuchAMonth(String string) {
+        boolean isThereSuchAMonth = false;
         for (Months m : Months.values()) {
             if (string.toUpperCase().equals(m.name())) {
-                i = 1;
                 System.out.println("There is such a month of the year - " + m.name());
+                isThereSuchAMonth = true;
             }
         }
-        if (i == 0) {
+        if (!isThereSuchAMonth) {
             System.out.println("There is no such month in the year - " + string);
         }
         System.out.println();
-        return i;
+        return isThereSuchAMonth;
     }
 
 
@@ -56,7 +56,7 @@ public enum Months {
             System.out.println(name() + " - This month has an odd number of days - " + numberOfDays);
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -67,7 +67,7 @@ public enum Months {
             }
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -78,7 +78,7 @@ public enum Months {
             }
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -89,7 +89,7 @@ public enum Months {
             }
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -103,7 +103,7 @@ public enum Months {
             System.out.println("February alone can have 28 days");
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -117,7 +117,7 @@ public enum Months {
             System.out.println("31 - This is the largest number of days");
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -128,7 +128,7 @@ public enum Months {
             }
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -142,7 +142,7 @@ public enum Months {
             }
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 
@@ -156,7 +156,7 @@ public enum Months {
             }
         }
         System.out.println();
-        return valueOf(name());
+        return this;
     }
 
 }

@@ -18,17 +18,17 @@ public class ConsoleMenu {
                     String str = scanner.nextLine();
                     System.out.println();
 
-                    if (Months.checkIfThereIsSuchAMonth(str) != 0) {
-                        Months.valueOf(str.toUpperCase()).
-                                displayWhetherTheMonthEnteredFromTheConsoleHasAnEvenNumberOfDays().
-                                displayAllMonthsThatHaveAnEvenNumberOfDays().
-                                displayAllMonthsThatHaveAnOddNumberOfDays().
-                                displayAllMonthsWithTheSameNumberOfDays().
-                                displayAllMonthsThatHaveFewerDays().
-                                displayAllMonthsThatHaveMoreDays().
-                                displayAllMonthsWithTheSameSeason().
-                                displayTheNextSeason().
-                                displayThePreviousSeason();
+                    if (Months.checkIfThereIsSuchAMonth(str)) {
+                        Months.valueOf(str.toUpperCase())
+                                .displayWhetherTheMonthEnteredFromTheConsoleHasAnEvenNumberOfDays()
+                                .displayAllMonthsThatHaveAnEvenNumberOfDays()
+                                .displayAllMonthsThatHaveAnOddNumberOfDays()
+                                .displayAllMonthsWithTheSameNumberOfDays()
+                                .displayAllMonthsThatHaveFewerDays()
+                                .displayAllMonthsThatHaveMoreDays()
+                                .displayAllMonthsWithTheSameSeason()
+                                .displayTheNextSeason()
+                                .displayThePreviousSeason();
                     }
                     System.out.println("Would you like to continue work with the months ( YES/NO )");
                     yes_No = scanner.nextLine();
