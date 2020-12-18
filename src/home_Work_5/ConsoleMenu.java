@@ -2,46 +2,68 @@ package home_Work_5;
 
 import java.util.Scanner;
 
+/**
+ * @Autor Volodymyr Melnyk
+ * This is my main class
+ * The class implements the console menu for working with ENUM
+ */
 public class ConsoleMenu {
-    private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * A scanner object of class Scanner is created
+     */
+    private static final Scanner scanner = new Scanner(System.in);
+
+    /**
+     * The program starts running here
+     * @param args command line values
+     */
     public static void main(String[] args) {
-        System.out.println("Welcome on work with the months!\n");
-        String yes_No = "yes";
+        System.out.println("Welcome on work with the months!\n" +
+                "Shell we start? ( YES/NO )");
 
-        while (!yes_No.equalsIgnoreCase("no")) {
+        while (doYouWantToContinue()) {
+            System.out.println("Enter the name of the month on English ");
+            String str = scanner.nextLine();
+            System.out.println();
 
-            if (yes_No.equalsIgnoreCase("yes")) {
-
-                while (yes_No.equalsIgnoreCase("yes")) {
-                    System.out.println("Enter the name of the month on English ");
-                    String str = scanner.nextLine();
-                    System.out.println();
-
-                    if (Months.checkIfThereIsSuchAMonth(str)) {
-                        Months.valueOf(str.toUpperCase())
-                                .displayWhetherTheMonthEnteredFromTheConsoleHasAnEvenNumberOfDays()
-                                .displayAllMonthsThatHaveAnEvenNumberOfDays()
-                                .displayAllMonthsThatHaveAnOddNumberOfDays()
-                                .displayAllMonthsWithTheSameNumberOfDays()
-                                .displayAllMonthsThatHaveFewerDays()
-                                .displayAllMonthsThatHaveMoreDays()
-                                .displayAllMonthsWithTheSameSeason()
-                                .displayTheNextSeason()
-                                .displayThePreviousSeason();
-                    }
-                    System.out.println("Would you like to continue work with the months ( YES/NO )");
-                    yes_No = scanner.nextLine();
-                    System.out.println();
-                }
-            } else if (!yes_No.equalsIgnoreCase("yes")) {
-                System.out.println("You entered an incorrect value - " + yes_No + "\n" +
-                        "Would you like to continue work with the months ( YES/NO )");
-                yes_No = scanner.nextLine();
-                System.out.println();
+            if (Months.checkIfThereIsSuchAMonth(str)) {
+                Months.valueOf(str.toUpperCase())
+                        .displayWhetherTheMonthEnteredFromTheConsoleHasAnEvenNumberOfDays()
+                        .displayAllMonthsThatHaveAnEvenNumberOfDays()
+                        .displayAllMonthsThatHaveAnOddNumberOfDays()
+                        .displayAllMonthsWithTheSameNumberOfDays()
+                        .displayAllMonthsThatHaveFewerDays()
+                        .displayAllMonthsThatHaveMoreDays()
+                        .displayAllMonthsWithTheSameSeason()
+                        .displayTheNextSeason()
+                        .displayThePreviousSeason();
             }
+            System.out.println("Would you like to continue work with the months ( YES/NO )");
         }
         System.out.println("Goodbye");
+    }
+
+    /**
+     * The program asks the user to enter String "s" until the user enters (YES/NO)
+     * @return boolean :
+     * true if enter "YES"
+     * false if enter "NO"
+     */
+    private static boolean doYouWantToContinue() {
+        boolean yesOrNo = true;
+        String s = scanner.nextLine();
+        System.out.println();
+        while (!s.equalsIgnoreCase("yes") && !s.equalsIgnoreCase("no")) {
+            System.out.println("You entered an incorrect value - " + s + "\n" +
+                    "Would you like to continue work with the months ( YES/NO )");
+            s = scanner.nextLine();
+            System.out.println();
+        }
+        if (s.equalsIgnoreCase("no")) {
+            yesOrNo = false;
+        }
+        return yesOrNo;
     }
 
 }
