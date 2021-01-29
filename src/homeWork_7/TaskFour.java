@@ -1,9 +1,77 @@
 package homeWork_7;
 
-public class TaskFour {
-}
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-// 4.   Користувач з консолі має вводити слова доти, доки не введе “break”, всі слова записуються в List.
+public class TaskFour {
+
+    private static Scanner scan = new Scanner(System.in);
+    private static StringBuilder aBuilder = new StringBuilder();
+
+    public static void main(String[] args) {
+
+        System.out.println("Вводьте слова доки не набридне\n" +
+                "Коли захочете завершити введіть - \"break\"");
+
+        String s;
+        List aList = new ArrayList();
+
+        do {
+            s = scan.nextLine();
+            aList.add(s);
+        }
+        while (!s.equalsIgnoreCase("break"));
+
+        System.out.println();
+        printAllWords(aList);
+
+        System.out.println();
+        printSWords(aList);
+
+        System.out.println();
+        printAllMoreThen5LettersWords(aList);
+    }
+
+
+    public static void printAllWords(List l) {
+        System.out.println("Всі слова які ввів користувач : ");
+        for (int i = 0; i < (l.size() - 1); i++) {
+            System.out.println(l.get(i).toString());
+        }
+    }
+
+
+    public static void printSWords(List l) {
+        System.out.println("Всі слова які починаються на \"s\" : ");
+        for (int i = 0; i < (l.size() - 1); i++) {
+            if (ifTheWordIsFits(l.get(i).toString())) {
+                System.out.println(l.get(i).toString());
+            }
+        }
+    }
+
+
+    public static void printAllMoreThen5LettersWords(List l) {
+        System.out.println("Всі слова в яких кількість букв більше ніж 5 : ");
+        for (int i = 0; i < (l.size() - 1); i++) {
+            if (l.get(i).toString().length() > 5) {
+                System.out.println(l.get(i).toString());
+            }
+        }
+    }
+
+
+    public static boolean ifTheWordIsFits(String s) {
+        Pattern p = Pattern.compile("^s");
+        Matcher m = p.matcher(s);
+        return m.find();
+    }
+}
+// 4.   Користувач з консолі має вводити слова доти, доки не введе “break”,
+//      всі слова записуються в List.
 //      Написати функцію для :
 //
 //  4.1 виведення користувачу всіх слова, які він ввів!

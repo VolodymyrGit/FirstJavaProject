@@ -10,7 +10,6 @@ public class TaskOne {
     private static Scanner scan = new Scanner(System.in);
 
 
-
     public static void main(String[] args) {
 
         System.out.println("Вводьте слова доки не набридне\nКоли захочете завершити введіть - 0");
@@ -72,6 +71,5 @@ public class TaskOne {
         return answer;
     }
 }
-
 //      Завдання(1, 2) робити через RegEx
 // 1.   Користувач вводить слова з консолі, в масив додавати лише ті, що починаються на “a”.

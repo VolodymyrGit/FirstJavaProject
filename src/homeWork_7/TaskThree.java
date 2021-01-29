@@ -25,7 +25,6 @@ public class TaskThree {
         return matcher.find();
     }
 }
-
 // 3.   Вхідним параметром є стрічка :
 //      String str = "I love Java more than my friend. Java is so beautiful.";
 //  3.1 перевірити чи є в стрічці слово “Java”;
