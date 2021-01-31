@@ -7,9 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskFour {
+    private static final Scanner scan = new Scanner(System.in);
 
-    private static Scanner scan = new Scanner(System.in);
-    private static StringBuilder aBuilder = new StringBuilder();
 
     public static void main(String[] args) {
 
@@ -17,7 +16,7 @@ public class TaskFour {
                 "Коли захочете завершити введіть - \"break\"");
 
         String s;
-        List aList = new ArrayList();
+        List<String> aList = new ArrayList<>();
 
         do {
             s = scan.nextLine();
@@ -36,29 +35,29 @@ public class TaskFour {
     }
 
 
-    public static void printAllWords(List l) {
+    public static void printAllWords(List<String> l) {
         System.out.println("Всі слова які ввів користувач : ");
         for (int i = 0; i < (l.size() - 1); i++) {
-            System.out.println(l.get(i).toString());
+            System.out.println(l.get(i));
         }
     }
 
 
-    public static void printSWords(List l) {
+    public static void printSWords(List<String> l) {
         System.out.println("Всі слова які починаються на \"s\" : ");
         for (int i = 0; i < (l.size() - 1); i++) {
-            if (ifTheWordIsFits(l.get(i).toString())) {
-                System.out.println(l.get(i).toString());
+            if (ifTheWordIsFits(l.get(i))) {
+                System.out.println(l.get(i));
             }
         }
     }
 
 
-    public static void printAllMoreThen5LettersWords(List l) {
+    public static void printAllMoreThen5LettersWords(List<String> l) {
         System.out.println("Всі слова в яких кількість букв більше ніж 5 : ");
         for (int i = 0; i < (l.size() - 1); i++) {
-            if (l.get(i).toString().length() > 5) {
-                System.out.println(l.get(i).toString());
+            if (l.get(i).length() > 5) {
+                System.out.println(l.get(i));
             }
         }
     }
