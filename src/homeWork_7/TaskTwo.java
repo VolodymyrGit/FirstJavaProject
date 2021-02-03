@@ -1,40 +1,36 @@
 package homeWork_7;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskTwo {
+    private static Pattern pattern = Pattern.compile("@gmail\\.com");
 
     public static void main(String[] args) {
-        String[] emailArray = {"skdfhf.com,",
-                "sdfhskjf.gmail.com",
-                "wkefjh.gmail.com",
-                "wlkefkjh@gmail",
-                "vkwefhiu@gmail.com",
-                "reghieheir",
-                "kefhie@gmail.com"};
+        ArrayList<String> emailList = new ArrayList<>();
+        emailList.add("skdfhf.com,");
+        emailList.add("sdfhskjf.gmail.com");
+        emailList.add("wkefjh.gmail.com");
+        emailList.add("wlkefkjh@gmail");
+        emailList.add("vkwefhiu@gmail.com");
+        emailList.add("reghieheir");
+        emailList.add("kefhie@gmail.com");
 
-        System.out.println(Arrays.toString(selectEmailAddressesOnly(emailArray)));
+        System.out.println(selectEmailAddressesOnly(emailList));
     }
 
 
-    public static boolean checkIfThisIsAnEmail(String s) {
-        Pattern pattern = Pattern.compile("@gmail\\.com");
-        Matcher matcher = pattern.matcher(s);
-        return matcher.find();
-    }
-
-
-    public static String[] selectEmailAddressesOnly (String[] s) {
-        StringBuilder sb = new StringBuilder();
-        for(String value : s) {
-            if (checkIfThisIsAnEmail(value)) {
-                sb.append(value)
-                        .append(" ");
+    public static List<String> selectEmailAddressesOnly (List<String> list) {
+        List<String> trueEmailList = new ArrayList<>();
+        for(String s : list) {
+            Matcher matcher = pattern.matcher(s);
+            if (matcher.find()) {
+              trueEmailList.add(s);
             }
         }
-        return sb.toString().split(" ");
+        return trueEmailList;
     }
 }
 //      Завдання(1, 2) робити через RegEx

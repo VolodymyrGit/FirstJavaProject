@@ -8,65 +8,56 @@ import java.util.regex.Pattern;
 
 public class TaskFour {
     private static final Scanner scan = new Scanner(System.in);
+    private static List<String> listWithSomeWords = new ArrayList<>();
+    private static Pattern pattern = Pattern.compile("^s");
 
 
     public static void main(String[] args) {
+        enterWordsUntilYouEnterABreak();
+        printAllWords(listWithSomeWords);
+        printOnlyThoseWordsThatHaveTheLetterS(listWithSomeWords);
+        printAllMoreThen5LettersWords(listWithSomeWords);
+    }
 
+
+    public static void enterWordsUntilYouEnterABreak() {
         System.out.println("Вводьте слова доки не набридне\n" +
                 "Коли захочете завершити введіть - \"break\"");
+        String s = scan.nextLine();
 
-        String s;
-        List<String> aList = new ArrayList<>();
-
-        do {
+        while (!s.equalsIgnoreCase("break")) {
+            listWithSomeWords.add(s);
             s = scan.nextLine();
-            aList.add(s);
-        }
-        while (!s.equalsIgnoreCase("break"));
-
-        System.out.println();
-        printAllWords(aList);
-
-        System.out.println();
-        printSWords(aList);
-
-        System.out.println();
-        printAllMoreThen5LettersWords(aList);
-    }
-
-
-    public static void printAllWords(List<String> l) {
-        System.out.println("Всі слова які ввів користувач : ");
-        for (int i = 0; i < (l.size() - 1); i++) {
-            System.out.println(l.get(i));
         }
     }
 
 
-    public static void printSWords(List<String> l) {
-        System.out.println("Всі слова які починаються на \"s\" : ");
-        for (int i = 0; i < (l.size() - 1); i++) {
-            if (ifTheWordIsFits(l.get(i))) {
-                System.out.println(l.get(i));
+    public static void printAllWords(List<String> list) {
+        System.out.println("\nВсі слова які ввів користувач : ");
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+
+
+    public static void printOnlyThoseWordsThatHaveTheLetterS(List<String> list) {
+        System.out.println("\nВсі слова які починаються на \"s\" : ");
+        for (String s : list) {
+            Matcher matcher = pattern.matcher(s);
+            if (matcher.find()) {
+                System.out.println(s);
             }
         }
     }
 
 
-    public static void printAllMoreThen5LettersWords(List<String> l) {
-        System.out.println("Всі слова в яких кількість букв більше ніж 5 : ");
-        for (int i = 0; i < (l.size() - 1); i++) {
-            if (l.get(i).length() > 5) {
-                System.out.println(l.get(i));
+    public static void printAllMoreThen5LettersWords(List<String> list) {
+        System.out.println("\nВсі слова в яких кількість букв більше ніж 5 : ");
+        for (String s : list) {
+            if (s.length() > 5) {
+                System.out.println(s);
             }
         }
-    }
-
-
-    public static boolean ifTheWordIsFits(String s) {
-        Pattern p = Pattern.compile("^s");
-        Matcher m = p.matcher(s);
-        return m.find();
     }
 }
 // 4.   Користувач з консолі має вводити слова доти, доки не введе “break”,
