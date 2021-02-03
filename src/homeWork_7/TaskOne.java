@@ -16,7 +16,7 @@ public class TaskOne {
     public static void main(String[] args) {
 
         enterWordsUntilYouEnterABreak();
-        System.out.println("Введені слова : " + listWithSomeWords.toString() + "\n");
+        System.out.println("Введені слова : " + listWithSomeWords + "\n");
         System.out.println("Слова, які починаються на \"a\" :\n" +
                 Arrays.toString(makeOnlyAWordsArray(listWithSomeWords)));
     }
