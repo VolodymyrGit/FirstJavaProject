@@ -10,25 +10,24 @@ import java.util.regex.Pattern;
 public class TaskOne {
     private static Scanner scan = new Scanner(System.in);
     private static Pattern pattern = Pattern.compile("^a");
-    private static List<String> listWithSomeWords = new ArrayList<>();
 
 
     public static void main(String[] args) {
-
-        enterWordsUntilYouEnterABreak();
+        List<String> listWithSomeWords = new ArrayList<>();
+        enterWordsUntilYouEnterABreak(listWithSomeWords);
         System.out.println("Введені слова : " + listWithSomeWords + "\n");
         System.out.println("Слова, які починаються на \"a\" :\n" +
                 Arrays.toString(makeOnlyAWordsArray(listWithSomeWords)));
     }
 
 
-    public static void enterWordsUntilYouEnterABreak() {
+    public static void enterWordsUntilYouEnterABreak(List<String> list) {
         System.out.println("Вводьте слова доки не набридне\n" +
                 "Коли захочете завершити введіть - \"break\"");
         String s = scan.nextLine();
 
         while (!s.equalsIgnoreCase("break")) {
-            listWithSomeWords.add(s);
+            list.add(s);
             s = scan.nextLine();
         }
     }
