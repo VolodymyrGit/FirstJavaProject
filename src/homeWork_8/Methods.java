@@ -1,91 +1,156 @@
 package homeWork_8;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
-public class Methods extends Commodity{
+public class Methods extends Commodity {
+    private static Scanner scan = new Scanner(System.in);
 
-    public static Scanner scan = new Scanner(System.in);
-
-    public Methods(String name, double length, double width, double weight) {
+    public Methods(String name, int length, int width, int weight) {
         super(name, length, width, weight);
     }
 
+    public static void consoleMenu(List<Commodity> list) {
+        System.out.println("Виводжу всі товари : \n" +
+                list);
 
-    public static void displayAllProducts(List<Object> l) {
-        System.out.println("Виводжу всі товари : ");
-        for (Object o : l) {
-            System.out.println(o.toString());
+
+        int actionNumber = scan.nextInt();
+
+        while (actionNumber == 1) {
+
+            System.out.println("\nБажаєте попрацювати з товарами? :\n" +
+                    "0 - Завершити роботу\n" +
+                    "1 - Працюємо\n" +
+                    "2 - Додати товар\n" +
+                    "3 - Видалити товар\n" +
+                    "4 - Замінити товар\n" +
+                    "5 - Сортувати за назвоню\n" +
+                    "6 - Сортувати за довжиною\n" +
+                    "7 - Сортувати за шириною\n" +
+                    "8 - Сортувати за вагою\n" +
+                    "9 - Вивести елемент колекції за індексом\n" +
+                    "Введіть номер операії :");
+
+            switch (actionNumber) {
+                case 0:
+                    System.exit(0);
+                    break;
+                case 1:
+                    System.out.println("Введіть номер операії :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 2: addTheCommodity(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 3: removeTheCommodity(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 4: replaceTheCommodity(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 5: sortByName(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 6: sortByLength(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 7: sortByWidth(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 8: sortByWeight(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+                case 9: printTheElementOfTheCollection(list);
+                    System.out.println("Працюємо далі? :");
+                    actionNumber = scan.nextInt();
+                    break;
+            }
         }
-        System.out.println();
     }
 
 
-    public static List<Object> addTheCommodity (List<Object> l) {
-        System.out.println("Додаємо новий товар\n" +
+    public static void addTheCommodity(List<Commodity> list) {
+        System.out.println("\nДодаємо новий товар\n" +
                 "Введіть назву товару : ");
-        String n = scan.nextLine();
+        String name = scan.nextLine();
+
         System.out.println("Введіть довжину :");
-        double len = scan.nextDouble();
+        int length = scan.nextInt();
+
         System.out.println("Введіть ширину :");
-        double wid = scan.nextDouble();
+        int width = scan.nextInt();
+
         System.out.println("Введіть вагу :");
-        double wei = scan.nextDouble();
-        System.out.println();
+        int weight = scan.nextInt();
 
-        l.add(new Commodity(n, len, wid, wei));
-        return l;
+        list.add(new Commodity(name, length, width, weight));
+
+        System.out.println(list);
     }
 
 
-    public static void removeTheCommodity (List<Object> l) {
-        System.out.println("Видаляємо обєкт :\n" +
-                "Вкажіть номер об'єкта від 0 до " + (l.size() - 1) + " :");
+    public static void removeTheCommodity(List<Commodity> list) {
+        System.out.println("\nВидаляємо обєкт :\n" +
+                "Вкажіть номер об'єкта від 0 до " + (list.size() - 1) + " :");
         int i = scan.nextInt();
-        System.out.println("Видалено обєкт : " + l.get(i).toString());
-        l.remove(i);
-        System.out.println();
+        System.out.println("Видалено обєкт : " + list.get(i).toString());
+        list.remove(i);
+        System.out.println(list);
     }
 
 
-    public static void replaceTheCommodity (List<Object> l) {
-        System.out.println("Замінюємо товар : \n" +
-                "Вкажіть номер товару, який хочете замінити від 0 до " + (l.size() - 1) + " :");
+    public static void replaceTheCommodity(List<Commodity> list) {
+        System.out.println("\nЗамінюємо товар : \n" +
+                "Вкажіть номер товару, який хочете замінити від 0 до " + (list.size() - 1) + " :");
         int i = scan.nextInt();
-        System.out.println("Вкажіть номер товару, яким хочете замінити від 0 до " + (l.size() - 1) + " :");
+        System.out.println("Вкажіть номер товару, яким хочете замінити від 0 до " + (list.size() - 1) + " :");
         int j = scan.nextInt();
-        l.set(i,l.get(j));
-        System.out.println();
+        list.set(i, list.get(j));
+        System.out.println(list);
     }
 
 
-    public static void sortByName (List<Commodity> list) {
+    public static void sortByName(List<Commodity> list) {
         System.out.println("\nСортуємо за ім'ям :");
         Collections.sort(list);
         System.out.println(list);
     }
 
 
-    public void sortByLength () {
+    public static void sortByLength(List<Commodity> list) {
         System.out.println("\nСортуємо за довжиною :");
-
+        list.sort(new CommodityLengthComparator());
+        System.out.println(list);
     }
 
 
-    public void sortByWidth () {
-
+    public static void sortByWidth(List<Commodity> list) {
+        System.out.println("\nСортуємо за шириною :");
+        list.sort(new CommodityWidthComparator());
+        System.out.println(list);
     }
 
 
-    public void sortByWeight () {
-
+    public static void sortByWeight(List<Commodity> list) {
+        System.out.println("\nСортуємо за вагою :");
+        list.sort(new CommodityWeightComparator());
+        System.out.println(list);
     }
 
 
-    public void printTheElementOfTheCollection () {
-
+    public static void printTheElementOfTheCollection(List<Commodity> list) {
+        System.out.println("\nВиводимо елемент колекції за індексом, який ми водимо з консолі : \n" +
+                "Ведіть індекс елемента який хочете вивести : ");
+        int index = scan.nextInt();
+        System.out.println(list.get(index));
     }
 }

@@ -1,18 +1,15 @@
 package homeWork_8;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
+import java.util.Comparator;
 
 public class Commodity implements Comparable<Commodity>{
     private String name;
-    private double length;
-    private double width;
-    private double weight;
+    private int length;
+    private int width;
+    private int weight;
 
-    public Commodity() {}
 
-    public Commodity(String name, double length, double width, double weight) {
+    public Commodity(String name, int length, int width, int weight) {
         this.name = name;
         this.length = length;
         this.width = width;
@@ -27,48 +24,69 @@ public class Commodity implements Comparable<Commodity>{
         this.name = name;
     }
 
-    public double getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
-    public double getWidth() {
+    public int getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public void setWidth(int width) {
         this.width = width;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
     @Override
     public String toString() {
-        return "Commodity{" +
+        return "\nCommodity{" +
                 "name='" + name + '\'' +
                 ", length=" + length +
                 ", width=" + width +
                 ", weight=" + weight +
-                "}\n";
+                "}";
     }
 
 
     @Override
     public int compareTo(Commodity c) {
-        return (int) (this.length - c.length);
-        return
+        return this.name.compareTo(c.name);
     }
+}
 
 
+class CommodityLengthComparator implements Comparator<Commodity> {
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return  o1.getLength() - o2.getLength();
+    }
+}
+
+
+class CommodityWidthComparator implements Comparator<Commodity> {
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return o1.getWidth() - o2.getWidth();
+    }
+}
+
+
+class CommodityWeightComparator implements Comparator<Commodity> {
+    @Override
+    public int compare(Commodity o1, Commodity o2) {
+        return o1.getWeight() - o2.getWeight();
+    }
 }
 //  Реалізовуємо консольну програму. Створити клас Commodity. Описати даний клас: поля методи.
 //  Повинні бути такі методи:
