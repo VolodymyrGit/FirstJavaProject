@@ -15,14 +15,9 @@ public class Methods extends Commodity {
         System.out.println("Виводжу всі товари : \n" +
                 list);
 
+        while (doYouWantToContinue()) {
 
-        int actionNumber = scan.nextInt();
-
-        while (actionNumber == 1) {
-
-            System.out.println("\nБажаєте попрацювати з товарами? :\n" +
-                    "0 - Завершити роботу\n" +
-                    "1 - Працюємо\n" +
+            System.out.println("\n0 - Завершити роботу\n" +
                     "2 - Додати товар\n" +
                     "3 - Видалити товар\n" +
                     "4 - Замінити товар\n" +
@@ -33,48 +28,51 @@ public class Methods extends Commodity {
                     "9 - Вивести елемент колекції за індексом\n" +
                     "Введіть номер операії :");
 
+            int actionNumber = scan.nextInt();
+
             switch (actionNumber) {
                 case 0:
                     System.exit(0);
                     break;
-                case 1:
-                    System.out.println("Введіть номер операії :");
-                    actionNumber = scan.nextInt();
+                case 2:
+                    addTheCommodity(list);
                     break;
-                case 2: addTheCommodity(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 3:
+                    removeTheCommodity(list);
                     break;
-                case 3: removeTheCommodity(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 4:
+                    replaceTheCommodity(list);
                     break;
-                case 4: replaceTheCommodity(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 5:
+                    sortByName(list);
                     break;
-                case 5: sortByName(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 6:
+                    sortByLength(list);
                     break;
-                case 6: sortByLength(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 7:
+                    sortByWidth(list);
                     break;
-                case 7: sortByWidth(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 8:
+                    sortByWeight(list);
                     break;
-                case 8: sortByWeight(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
-                    break;
-                case 9: printTheElementOfTheCollection(list);
-                    System.out.println("Працюємо далі? :");
-                    actionNumber = scan.nextInt();
+                case 9:
+                    printTheElementOfTheCollection(list);
                     break;
             }
         }
+    }
+
+
+    public static boolean doYouWantToContinue() {
+        System.out.println("\nПрацюємо з товарами? (1 - так / 0 - ні) :");
+        String answer = scan.nextLine();
+        System.out.println();
+        while (!answer.equalsIgnoreCase("0") && !answer.equalsIgnoreCase("1")) {
+            System.out.println("Ви ввели помилкове значення.\nБажаєте продовжити? (1/0)");
+            answer = scan.nextLine();
+            System.out.println();
+        }
+        return !answer.equalsIgnoreCase("0");
     }
 
 
@@ -148,8 +146,8 @@ public class Methods extends Commodity {
 
 
     public static void printTheElementOfTheCollection(List<Commodity> list) {
-        System.out.println("\nВиводимо елемент колекції за індексом, який ми водимо з консолі : \n" +
-                "Ведіть індекс елемента який хочете вивести : ");
+        System.out.println("\nВиводимо елемент колекції за індексом.\n" +
+                "Ведіть індекс елемента який хочете вивести від 0 до " + (list.size() - 1) + " :");
         int index = scan.nextInt();
         System.out.println(list.get(index));
     }

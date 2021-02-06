@@ -13,7 +13,6 @@ public class Main {
         goods.add(new Commodity("Nissan", 1, 3, 2500));
         goods.add(new Commodity("VolksWagen", 9, 2, 1500));
 
-
         Methods.consoleMenu(goods);
     }
 }
