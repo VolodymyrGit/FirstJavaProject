@@ -117,7 +117,8 @@ public class Methods {
         System.out.println(list);
     }
 
-    public static void sortCommodity (List<Commodity> list, Comparator<Commodity> cC) {
+
+    public static void sortCommodity(List<Commodity> list, Comparator<Commodity> cC) {
         list.sort(cC);
         System.out.println(list);
     }

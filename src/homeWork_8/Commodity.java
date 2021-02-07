@@ -1,13 +1,10 @@
 package homeWork_8;
 
-import java.util.Comparator;
-
-public class Commodity implements Comparable<Commodity>{
+public class Commodity{
     private String name;
     private int length;
     private int width;
     private int weight;
-
 
     public Commodity(String name, int length, int width, int weight) {
         this.name = name;
@@ -56,12 +53,6 @@ public class Commodity implements Comparable<Commodity>{
                 ", width=" + width +
                 ", weight=" + weight +
                 "}";
-    }
-
-
-    @Override
-    public int compareTo(Commodity c) {
-        return this.name.compareTo(c.name);
     }
 }
 //  Реалізовуємо консольну програму. Створити клас Commodity. Описати даний клас: поля методи.
