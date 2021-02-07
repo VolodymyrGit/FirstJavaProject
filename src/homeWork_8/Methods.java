@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Methods {
     private static Scanner scan = new Scanner(System.in);
 
-
     public static void consoleMenu(List<Commodity> list) {
         System.out.println("Виводжу всі товари : \n" + list);
 
@@ -97,9 +96,14 @@ public class Methods {
     }
 
 
+    public static int lastIndex(List<Commodity> list) {
+        return list.size() - 1;
+    }
+
+
     public static void removeTheCommodity(List<Commodity> list) {
         System.out.println("\nВидаляємо обєкт зі списку :\n" + list + "\n\n" +
-                "Вкажіть номер об'єкта від 0 до " + (list.size() - 1) + " :");
+                "Вкажіть номер об'єкта від 0 до " + lastIndex(list) + " :");
         int i = scan.nextInt();
         System.out.println("Видалено обєкт : " + list.get(i).toString());
         list.remove(i);
@@ -109,9 +113,9 @@ public class Methods {
 
     public static void replaceTheCommodity(List<Commodity> list) {
         System.out.println("\nЗамінюємо товар : \n" +
-                "Вкажіть номер товару, який хочете замінити від 0 до " + (list.size() - 1) + " :");
+                "Вкажіть номер товару, який хочете замінити від 0 до " + lastIndex(list) + " :");
         int i = scan.nextInt();
-        System.out.println("Вкажіть номер товару, яким хочете замінити від 0 до " + (list.size() - 1) + " :");
+        System.out.println("Вкажіть номер товару, яким хочете замінити від 0 до " + lastIndex(list) + " :");
         int j = scan.nextInt();
         list.set(i, list.get(j));
         System.out.println(list);
@@ -126,7 +130,7 @@ public class Methods {
 
     public static void printTheElementOfTheCollection(List<Commodity> list) {
         System.out.println("\nВиводимо елемент колекції за індексом.\n" +
-                "Ведіть індекс елемента який хочете вивести від 0 до " + (list.size() - 1) + " :");
+                "Ведіть індекс елемента який хочете вивести від 0 до " + lastIndex(list) + " :");
         int index = scan.nextInt();
         System.out.println(list.get(index));
     }
