@@ -64,30 +64,6 @@ public class Commodity implements Comparable<Commodity>{
         return this.name.compareTo(c.name);
     }
 }
-
-
-class CommodityLengthComparator implements Comparator<Commodity> {
-    @Override
-    public int compare(Commodity o1, Commodity o2) {
-        return  o1.getLength() - o2.getLength();
-    }
-}
-
-
-class CommodityWidthComparator implements Comparator<Commodity> {
-    @Override
-    public int compare(Commodity o1, Commodity o2) {
-        return o1.getWidth() - o2.getWidth();
-    }
-}
-
-
-class CommodityWeightComparator implements Comparator<Commodity> {
-    @Override
-    public int compare(Commodity o1, Commodity o2) {
-        return o1.getWeight() - o2.getWeight();
-    }
-}
 //  Реалізовуємо консольну програму. Створити клас Commodity. Описати даний клас: поля методи.
 //  Повинні бути такі методи:
 //  Додати товар

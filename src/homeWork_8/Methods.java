@@ -1,19 +1,16 @@
 package homeWork_8;
 
-import java.util.Collections;
+import homeWork_8.commodityComparators.*;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Methods extends Commodity {
+public class Methods {
     private static Scanner scan = new Scanner(System.in);
 
-    public Methods(String name, int length, int width, int weight) {
-        super(name, length, width, weight);
-    }
 
     public static void consoleMenu(List<Commodity> list) {
-        System.out.println("Виводжу всі товари : \n" +
-                list);
+        System.out.println("Виводжу всі товари : \n" + list);
 
         while (doYouWantToContinue()) {
 
@@ -44,16 +41,20 @@ public class Methods extends Commodity {
                     replaceTheCommodity(list);
                     break;
                 case 5:
-                    sortByName(list);
+                    System.out.println("\nСортуємо за ім'ям :");
+                    sortCommodity(list, new CommodityNameComparator());
                     break;
                 case 6:
-                    sortByLength(list);
+                    System.out.println("\nСортуємо за довжиною :");
+                    sortCommodity(list, new CommodityLengthComparator());
                     break;
                 case 7:
-                    sortByWidth(list);
+                    System.out.println("\nСортуємо за шириною :");
+                    sortCommodity(list, new CommodityWidthComparator());
                     break;
                 case 8:
-                    sortByWeight(list);
+                    System.out.println("\nСортуємо за вагою :");
+                    sortCommodity(list, new CommodityWeightComparator());
                     break;
                 case 9:
                     printTheElementOfTheCollection(list);
@@ -65,14 +66,14 @@ public class Methods extends Commodity {
 
     public static boolean doYouWantToContinue() {
         System.out.println("\nПрацюємо з товарами? (1 - так / 0 - ні) :");
-        String answer = scan.nextLine();
+        int answer = scan.nextInt();
         System.out.println();
-        while (!answer.equalsIgnoreCase("0") && !answer.equalsIgnoreCase("1")) {
+        while (answer != 0 && answer != 1) {
             System.out.println("Ви ввели помилкове значення.\nБажаєте продовжити? (1/0)");
-            answer = scan.nextLine();
+            answer = scan.nextInt();
             System.out.println();
         }
-        return !answer.equalsIgnoreCase("0");
+        return answer == 1;
     }
 
 
@@ -97,7 +98,7 @@ public class Methods extends Commodity {
 
 
     public static void removeTheCommodity(List<Commodity> list) {
-        System.out.println("\nВидаляємо обєкт :\n" +
+        System.out.println("\nВидаляємо обєкт зі списку :\n" + list + "\n\n" +
                 "Вкажіть номер об'єкта від 0 до " + (list.size() - 1) + " :");
         int i = scan.nextInt();
         System.out.println("Видалено обєкт : " + list.get(i).toString());
@@ -116,31 +117,8 @@ public class Methods extends Commodity {
         System.out.println(list);
     }
 
-
-    public static void sortByName(List<Commodity> list) {
-        System.out.println("\nСортуємо за ім'ям :");
-        Collections.sort(list);
-        System.out.println(list);
-    }
-
-
-    public static void sortByLength(List<Commodity> list) {
-        System.out.println("\nСортуємо за довжиною :");
-        list.sort(new CommodityLengthComparator());
-        System.out.println(list);
-    }
-
-
-    public static void sortByWidth(List<Commodity> list) {
-        System.out.println("\nСортуємо за шириною :");
-        list.sort(new CommodityWidthComparator());
-        System.out.println(list);
-    }
-
-
-    public static void sortByWeight(List<Commodity> list) {
-        System.out.println("\nСортуємо за вагою :");
-        list.sort(new CommodityWeightComparator());
+    public static void sortCommodity (List<Commodity> list, Comparator<Commodity> cC) {
+        list.sort(cC);
         System.out.println(list);
     }
 
