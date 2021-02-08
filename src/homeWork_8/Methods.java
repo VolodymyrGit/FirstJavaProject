@@ -1,12 +1,17 @@
 package homeWork_8;
 
 import homeWork_8.commodityComparators.*;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class Methods {
     private static Scanner scan = new Scanner(System.in);
+    private static String sort1 = "\nСортуємо за ім'ям :";
+    private static String sort2 = "\nСортуємо за довжиною :";
+    private static String sort3 = "\nСортуємо за шириною :";
+    private static String sort4 = "\nСортуємо за вагою :";
 
     public static void consoleMenu(List<Commodity> list) {
         System.out.println("Виводжу всі товари : \n" + list);
@@ -40,20 +45,16 @@ public class Methods {
                     replaceTheCommodity(list);
                     break;
                 case 5:
-                    System.out.println("\nСортуємо за ім'ям :");
-                    sortCommodity(list, new CommodityNameComparator());
+                    sortCommodity(list, new CommodityNameComparator(), sort1);
                     break;
                 case 6:
-                    System.out.println("\nСортуємо за довжиною :");
-                    sortCommodity(list, new CommodityLengthComparator());
+                    sortCommodity(list, new CommodityLengthComparator(), sort2);
                     break;
                 case 7:
-                    System.out.println("\nСортуємо за шириною :");
-                    sortCommodity(list, new CommodityWidthComparator());
+                    sortCommodity(list, new CommodityWidthComparator(), sort3);
                     break;
                 case 8:
-                    System.out.println("\nСортуємо за вагою :");
-                    sortCommodity(list, new CommodityWeightComparator());
+                    sortCommodity(list, new CommodityWeightComparator(), sort4);
                     break;
                 case 9:
                     printTheElementOfTheCollection(list);
@@ -122,7 +123,8 @@ public class Methods {
     }
 
 
-    public static void sortCommodity(List<Commodity> list, Comparator<Commodity> cC) {
+    public static void sortCommodity(List<Commodity> list, Comparator<Commodity> cC, String toDisplayHowWeWillSort) {
+        System.out.println(toDisplayHowWeWillSort);
         list.sort(cC);
         System.out.println(list);
     }
