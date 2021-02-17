@@ -1,10 +1,7 @@
 package homeWork_9;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 
 public class Main {
 
@@ -17,9 +14,6 @@ public class Main {
         ZooClubMethods.addAPersonToTheClub(zooClub);
         ZooClubMethods.removeTheAnimalFromThePerson(zooClub);
         ZooClubMethods.removeThePersonFromTheClub(zooClub);
-
-
-
     }
 }
 //        1Переробити попереднє завдання, там де компаратори використовуються лише один раз, використати аононімні класи
