@@ -1,5 +1,9 @@
 package homeWork_10;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class MyEntry <K, V> {
     private K key;
     private V value;
@@ -33,6 +37,18 @@ public class MyEntry <K, V> {
                 '}';
     }
 
+    public void addNewObjectToMap (Map<K, V> m, MyEntry<K, V> entry) {
+        m.put(entry.getKey(), entry.getValue());
+    }
+
+    public void deleteFromMapByKey(Map<K, V> m, K k) {
+        m.remove(k);
+    }
+
+    public void deleteFromMapByValue(Map<K, V> m, V v) {
+        Set<Map.Entry<K, V>> entries = new HashSet<>();
+        entries = m.entrySet();
+    }
 
 }
 
