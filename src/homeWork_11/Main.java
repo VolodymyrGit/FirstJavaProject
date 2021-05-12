@@ -1,5 +1,11 @@
 package homeWork_11;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +35,18 @@ public class Main {
 
         Methods.serializeCollection(employees1);
         Methods.deserializeCollection();
+        System.out.println();
+
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader("C:\\Users\\Laptop\\Desktop\\ProjectJournal.txt"))){
+
+            while (reader.ready()) {
+                String s = reader.readLine();
+                System.out.println(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 //    Створити клас Employee, описати даний клас наступними полями: name, id, salary.
