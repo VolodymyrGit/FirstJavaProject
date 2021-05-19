@@ -1,0 +1,4 @@
+name
+weight
+address
+[private java.lang.String homeWork_13.Person.name, private int homeWork_13.Person.weight, private java.lang.String homeWork_13.Person.address]
